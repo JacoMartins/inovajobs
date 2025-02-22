@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className="flex flex-row justify-center items-center">
-      <div className="max-w-6xl px-4 py-8 sm:px-6 lg:px-8 w-full">
+      <div className="max-w-6xl px-4 py-8 sm:px-8 md:px-8 lg:px-0 w-full">
         <div className="flex flex-row justify-between items-center">
           <div>
             <Link href="/" className={`flex items-center font-bold text-2xl text-neutral-800 uppercase tracking-tight`}>
