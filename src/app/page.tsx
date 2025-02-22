@@ -1,61 +1,84 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Image from "next/image";
-import Link from "next/link";
+import HighlightPost from "@/components/HighlightPost";
+import Post from "@/components/Post";
+import Suggestion from "@/components/Suggestion";
+import { Sparkle } from "@phosphor-icons/react/dist/ssr";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
+    <div className="flex flex-col items-center justify-center w-full">
+      <main className="max-w-6xl lg:px-0 md:px-4 sm:px-6 py-12">
+        <div className="flex flex-col gap-6 w-full">
+          <h1 className="text-3xl font-semibold text-neutral-900">Destaques</h1>
 
-      <Header />
+          <div className="flex flex-row gap-10 w-full">
+            <HighlightPost
+              subject="Vagas"
+              title="Vaga de Dev na Empresa X"
+              description="A empresa X está em busca de um desenvolvedor para..."
+              user="Fulano de Tal"
+              date="1 de janeiro de 2022"
+            />
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Featured Article */}
-          <article className="md:col-span-2 space-y-4">
-            <div className="aspect-[16/9] relative overflow-hidden rounded-lg bg-neutral-300">
-              <Image
-                src="/placeholder.svg?height=400&width=800"
-                alt="Featured article image"
-                fill
-                className="object-cover"
+            <div className="flex flex-col gap-8">
+              <div className="flex flex-row justify-start items-center gap-4 w-full">
+                <Sparkle className="w-8 h-8 text-cyan-600" />
+                <h2 className="text-2xl font-[500] text-neutral-900">
+                  Escolha dos Editores
+                </h2>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <Suggestion
+                  subject="Vagas"
+                  title="Canadá Enfrenta Escassez de Mão de Obra: Oportunidade?"
+                />
+                <Suggestion
+                  subject="Vagas"
+                  title="Canadá Enfrenta Escassez de Mão de Obra: Oportunidade?"
+                />
+                <Suggestion
+                  subject="Vagas"
+                  title="Canadá Enfrenta Escassez de Mão de Obra: Oportunidade?"
+                />
+                <Suggestion
+                  subject="Vagas"
+                  title="Canadá Enfrenta Escassez de Mão de Obra: Oportunidade?"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-8">
+            <h2 className="text-2xl font-semibold text-neutral-900">
+              Posts
+            </h2>
+
+            <div className="flex flex-row flex-wrap gap-8 w-full">
+              <Post
+                subject="Finanças"
+                title="Como Economizar Dinheiro"
+                description="Dicas para economizar dinheiro no dia a dia."
+                user="Fulano de Tal"
+                date="1 de janeiro de 2022"
+              />
+              <Post
+                subject="Finanças"
+                title="Como Economizar Dinheiro"
+                description="Dicas para economizar dinheiro no dia a dia."
+                user="Fulano de Tal"
+                date="1 de janeiro de 2022"
+              />
+              <Post
+                subject="Finanças"
+                title="Como Economizar Dinheiro"
+                description="Dicas para economizar dinheiro no dia a dia."
+                user="Fulano de Tal"
+                date="1 de janeiro de 2022"
               />
             </div>
-            <div className="space-y-2">
-              <span className="text-sky-500 text-sm font-medium">Tópico</span>
-              <h2 className="text-2xl font-bold text-neutral-800">Lorem Ipsum Dolor Met</h2>
-              <p className="text-sky-500 text-sm">Autor / Data</p>
-              <p className="text-neutral-600 line-clamp-2">
-                Lorem Ipsum Dolor Amet Abis Nubiam Teriat Facium Accu-Umus Boratius Nepris
-              </p>
-            </div>
-          </article>
-
-          {/* Sidebar Article */}
-          <article className="space-y-4">
-            <div className="aspect-[16/9] relative overflow-hidden rounded-lg bg-neutral-300">
-              <Image
-                src="/placeholder.svg?height=200&width=400"
-                alt="Sidebar article image"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="space-y-2">
-              <span className="text-sky-500 text-sm font-medium">Tópico</span>
-              <h3 className="text-xl font-bold text-neutral-800">Lorem Ipsum Dolor Met</h3>
-              <p className="text-sky-500 text-sm">Autor / Data</p>
-              <p className="text-neutral-600 line-clamp-2">
-                Lorem Ipsum Dolor Amet Abis Nubiam Teriat Facium Accu-Umus Boratius Nepris
-              </p>
-            </div>
-          </article>
+          </div>
         </div>
       </main>
-    
-      <Footer />
     </div>
   );
 }
